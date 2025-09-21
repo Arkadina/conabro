@@ -1,11 +1,12 @@
 {
   "name": "conabro2",
   "private": true,
+  "homepage": "https://arkadina.github.io/conabro/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build && gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
