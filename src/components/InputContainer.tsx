@@ -59,7 +59,6 @@ function InputContainer() {
 
   return (
     <div className="">
-      <TCLE />
       <form onSubmit={handleSubmit(onSubmit)}>
         <UserInput register={register} />
         <hr className="my-5" />

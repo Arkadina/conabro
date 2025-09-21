@@ -6,6 +6,7 @@ import logoESPERO from "../assets/logo-espero.svg";
 import logoODONTO from "../assets/logo-odonto.svg";
 
 export default function Home() {
+  console.log("home");
   return (
     <div className="min-h-[100vh] flex-1 bg-background-main flex ">
       <div className="bg-orange w-[300px] xl:w-[450px] flex items-center justify-between flex-col p-6 lg:p-10 ">
