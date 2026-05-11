@@ -21,8 +21,8 @@ export default function Thanks() {
 
   return (
     <div className="min-h-[100vh] flex-1 items-center justify-center bg-background-main flex flex-col py-20 space-y-4">
-      <p className="text-2xl">Obrigado por participar da pesquisa!! ❤️</p>
-      <p className="text-base">Você será redirecionado para a home em {time} segundos.</p>
+      <p className="text-2xl">Thank you for participating in the study! ❤️</p>
+      <p className="text-base">You will be redirected to the homepage in {time} seconds.</p>
     </div>
   );
 }

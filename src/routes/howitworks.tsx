@@ -23,22 +23,22 @@ const stepContents = [
     content: (
       <>
         <p className="text-2xl">
-          Serão apresentadas, em sequência, 30 imagens radiográficas interproximais.
+          You will be shown 30 interproximal radiographic images in sequence.
         </p>
         <br />
         <p className="text-2xl">
-          O avaliador deverá classificar cada imagem de acordo com a adequação da angulação
-          vertical, utilizando os seguintes critérios:
+          The evaluator should classify each image according to the adequacy of vertical angulation,
+          using the following criteria:
         </p>
         <br />
         <ul className="ml-8 list-none space-y-3 text-base flex flex-col">
           <li className="bg-green text-white px-4 py-2 rounded-lg relative pl-6 before:content-['•'] before:absolute before:left-2 before:text-white 2xl:text-xl">
-            Imagem não comprometida: quando a angulação vertical é adequada para a interpretação da
-            COA.
+            Uncompromised image: when the vertical angulation is adequate for interpreting the
+            alveolar bone crest (COA).
           </li>
           <li className="bg-red text-white px-4 py-2 rounded-lg relative pl-6 before:content-['•'] before:absolute before:left-2 before:text-white 2xl:text-xl">
-            Imagem comprometida: quando a angulação vertical, é inadequada para a interpretação da
-            crista óssea alveolar (COA).
+            Compromised image: when the vertical angulation is inadequate for interpreting the
+            alveolar bone crest (COA).
           </li>
         </ul>
       </>
@@ -48,7 +48,7 @@ const stepContents = [
     key: "step2",
     content: (
       <p className="text-2xl">
-        Você deverá avaliar 30 imagens, com um tempo estimado de 5 segundos para cada uma.
+        You should evaluate 30 images, with an estimated time of 5 seconds for each image.
       </p>
     ),
   },
@@ -109,14 +109,14 @@ function HowItWorksStepper() {
             onClick={() => setCurrentStep((prev) => prev - 1)}
             disabled={currentStep === 1}
           >
-            Voltar
+            Back
           </Button>
           <Button
             variant="secondary"
             className={cn("w-32", currentStep >= steps.length && "bg-orange text-white")}
             onClick={() => handleOnClick()}
           >
-            {currentStep >= steps.length ? "Começar" : "Próximo"}
+            {currentStep >= steps.length ? "Start" : "Next"}
           </Button>
         </div>
       </div>

@@ -62,10 +62,10 @@ function InputContainer() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <UserInput register={register} />
         <hr className="my-5" />
-        <Label className="mb-4">Gênero</Label>
+        <Label className="mb-4">Gender</Label>
         <GenderRadioGroup control={control} />
         <hr className="mt-5 mb-5" />
-        <Label className="mb-4">Anos de experiência</Label>
+        <Label className="mb-4">Years of experience</Label>
         <ExperienceRadioGroup control={control} />
         <hr className="my-5 bg-[#EFEAEA]" />
         <ConsentCheckbox control={control} />
@@ -75,7 +75,7 @@ function InputContainer() {
             variant="secondary"
             type="submit"
           >
-            {isLoading ? <Spinner size="small" className="text-white" /> : "Continuar"}
+            {isLoading ? <Spinner size="small" className="text-white" /> : "Continue"}
             <span className="bg-primary-foreground/15 pointer-events-none absolute inset-y-0 end-0 flex w-9 items-center justify-center ">
               <ChevronRightIcon className="opacity-60" size={16} aria-hidden="true" />
             </span>
@@ -94,7 +94,7 @@ function GenderRadioGroup({ control }: { control: any }) {
       rules={{ required: true }}
       render={({ field }) => (
         <RadioGroup className="gap-2" value={field.value} onValueChange={field.onChange}>
-          {/* Feminino */}
+          {/* Female */}
           <div className="border-input has-data-[state=checked]:border-primary/50 relative flex items-center gap-2 rounded-md border p-4 shadow-xs outline-none">
             <RadioGroupItem
               value="female"
@@ -106,13 +106,13 @@ function GenderRadioGroup({ control }: { control: any }) {
               <FcBusinesswoman size={30} />
               <div className="grid grow gap-2">
                 <Label htmlFor="female" className="2xl:text-base">
-                  Feminino
+                  Female
                 </Label>
               </div>
             </div>
           </div>
 
-          {/* Masculino */}
+          {/* Male */}
           <div className="border-input has-data-[state=checked]:border-primary/50 relative flex items-start gap-2 rounded-md border p-4 shadow-xs outline-none">
             <RadioGroupItem
               value="male"
@@ -124,7 +124,7 @@ function GenderRadioGroup({ control }: { control: any }) {
               <FcBusinessman size={30} />
               <div className="grid grow gap-2">
                 <Label htmlFor="male" className="2xl:text-base">
-                  Masculino
+                  Male
                 </Label>
               </div>
             </div>
@@ -155,13 +155,13 @@ function ExperienceRadioGroup({ control }: { control: any }) {
               <FcReadingEbook size={30} />
               <div className="grid grow gap-2">
                 <Label htmlFor={`plus5`} className="2xl:text-base">
-                  +5 anos
+                  5+ years
                 </Label>
                 <p
                   id={`plus5-description`}
                   className="text-muted-foreground text-xs 2xl:text-base "
                 >
-                  Possuo mais de 5 anos de experiência odontológica
+                  I have more than 5 years of dental experience
                 </p>
               </div>
             </div>
@@ -178,13 +178,13 @@ function ExperienceRadioGroup({ control }: { control: any }) {
               <FcReading size={30} />
               <div className="grid grow gap-2">
                 <Label htmlFor={`minus5`} className="2xl:text-base">
-                  -5 anos
+                  Less than 5 years
                 </Label>
                 <p
                   id={`minus5-description`}
                   className="text-muted-foreground text-xs 2xl:text-base"
                 >
-                  Possuo menos de 5 anos de experiência odontológica.
+                  I have less than 5 years of dental experience.
                 </p>
               </div>
             </div>
@@ -200,12 +200,12 @@ function UserInput({ register }: { register: any }) {
   return (
     <div className="*:not-first:mt-2 mt-5">
       <Label className="mb-4 2xl:text-lg" htmlFor={id}>
-        Nome
+        Name
       </Label>
       <Input
         id={id}
         className="2xl:text-lg"
-        placeholder="Seu nome"
+        placeholder="Your name"
         {...register("name", { required: true })}
       />
     </div>
@@ -230,15 +230,14 @@ function ConsentCheckbox({ control }: { control: any }) {
           />
           <div className="grid grow gap-2">
             <Label htmlFor="terms">
-              Termo de Consentimento e Livre Esclarecido{" "}
+              Informed Consent Form{" "}
               <span className="text-muted-foreground text-xs 2xl:text-sm leading-[inherit] font-normal">
                 (TCLE)
               </span>
             </Label>
             <p id={`terms-description`} className="text-muted-foreground text-xs 2xl:text-base">
-              Declaro que li e estou de acordo com o Termo de Consentimento Livre e Esclarecido. Ao
-              marcar esta opção, concordo em participar voluntariamente da pesquisa conforme
-              descrito no termo.
+              I declare that I have read and agree with the Informed Consent Form. By checking this
+              option, I agree to participate voluntarily in the research as described in the form.
             </p>
           </div>
         </div>
@@ -265,15 +264,13 @@ function TCLE() {
             variant="secondary"
           >
             <PinIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
-            Termo de Consentimento Livre e Esclarecido
+            Informed Consent Form
           </Button>
         </div>
       </DialogTrigger>
       <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg [&>button:last-child]:top-3.5">
         <DialogHeader className="contents space-y-0 text-left">
-          <DialogTitle className="border-b px-6 py-4 text-base">
-            Termo de Consentimento e Livre Esclarecido
-          </DialogTitle>
+          <DialogTitle className="border-b px-6 py-4 text-base">Informed Consent Form</DialogTitle>
           <div className="overflow-y-auto">
             <DialogDescription asChild>
               <div className="px-6 py-4">
@@ -385,7 +382,7 @@ function TCLE() {
             </DialogDescription>
             <DialogFooter className="px-6 pb-6 sm:justify-start">
               <DialogClose asChild>
-                <Button type="button">Declaro que li</Button>
+                <Button type="button">I have read</Button>
               </DialogClose>
             </DialogFooter>
           </div>
